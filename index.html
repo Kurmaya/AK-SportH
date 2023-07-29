@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK SPORT HORSES</title>
+    
+  <script type="module" crossorigin src="./assets/index-6a44c67f.js"></script>
+  <link rel="stylesheet" href="./assets/index-27b1148b.css">
+</head>
+<body>
+    
+    <canvas class="webgl"></canvas>
+
+			<section>
+				<div class="home">
+
+						<div class="logo" >
+							<img src="images\AK Sport Horses Logo Golden.png" alt="">
+						</div>
+						<div class="container">
+						<h2 class="ride">Riding Classes</h2>
+						<h2 class="tour">Take a Tour</h2>
+						<h2 class="team">Meet The Team</h2>
+						<h2 class="horses">Meet The Horses</h2>
+						<h2 class="services">Other Services</h2>
+						<h2 class="cont">Contact</h2>
+
+						</div>
+
+				</div>
+				<div class="content">
+					<div class="cross">&times;</div>
+					<h2></h2>
+
+					<div class="classes">
+
+						<!-- <span>" The more you ride the more you get better at it"</span> -->
+						<h3>Monthly Packages:</h3>
+						<div class="packs">
+							<h4 class="gold">GOLD</h4>
+						<p>
+							If you would like to ride with us on daily basis, whether it be fitness, leisure or to learn the sport, you should definitely opt for this package in which we offer 20 lessons with a validity of 30 days at just 15,000/-
+							</p>
+						</div>
+						<div class="packs">
+							<h4 class="silver">SILVER</h4>
+							<p>If you cannot manage daily but would like to ride more often then here you go! We offer 14 lessons with a validity of 30 days at just 10,500/-</p>
+						</div>
+						<div class="packs">
+							<h4 class="bronze">BRONZE</h4>
+							<p>If you have a busy schedule throughout then this will be the most comfortable package for you in which we offer 8 lessons with a validity of 30 days at just 6500/-</p>
+						</div>
+
+					</div>
+					<div class="contact">
+						<h4>e-mail: aksporthorsespune@gmail.com</h4>
+						<h4>Ashay: 9561167771</h4>
+						<h4>Sandeep: 9112671716</h4>
+						<h4>Address: Survey no. 391/2/3, Charholi Budruk, Pune - 411015.</h4>
+					</div>
+					<div class="meet-team">
+						<div class="person">
+							<img src="" alt="">
+							<h4>Ashay</h4>
+							<h5>Owner, Trainer, Coach</h5>
+
+						</div>
+						<div class="person">
+							<img src="" alt="">
+							<h4>Sandeep Khire</h4>
+							<h5>Finance and Accounting</h5>
+
+						</div>
+						<div class="person">
+							<img src="" alt="">
+							<h4>Manisha Khire</h4>
+							<h5>Finance and Accounting</h5>
+
+						</div>
+						<div class="person">
+							<img src="" alt="">
+							<h4>Diksha Thakkar</h4>
+							<h5>Overall Management ,Canine behaviour, training and nutrition.</h5>
+
+						</div>
+						<div class="person">
+							<img src="" alt="">
+							<h4>Nupur Gandhekar</h4>
+							<h5>Social Media, Marketing and Advertising.</h5>
+
+						</div>
+						<div class="person">
+							<img src="" alt="">
+							<h4>Telaram Nayak</h4>
+							<h5>Head Groom and Coach.</h5>
+
+						</div>
+
+					</div>
+
+				</div>
+				<div class="footer">
+					<p>&#169; &nbsp; All Rights Reserved 2023</p>
+					<p>Made By&nbsp;&nbsp;&nbsp;&nbsp;<a href="www.themafia.media"><img src="images\Mafia Media Logo.jpeg" alt=""></a></p>
+				</div>
+			</section>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+    <script>
+
+        const links = document.querySelectorAll('.container h2');
+        let heads = document.querySelectorAll('.content h2');
+        const close = document.querySelector('.cross');
+
+        close.addEventListener('click',function(){
+            document.querySelector('.content').classList.remove('active');
+        })
+        links.forEach(link =>{
+            link.addEventListener('click',function(e){
+                linkClass(e.target.classList);
+                    document.querySelector('.content').classList.add('active');
+                    heads.forEach(h =>{
+                        h.textContent=link.textContent;
+                    })
+            })
+        })
+        function linkClass (a){
+            switch(a.value) {
+                case "ride":
+                    // document.querySelectorAll('.inf').forEach(inf =>{
+
+
+                    // })
+                    setTimeout(() => {
+                        document.querySelector('.classes').classList.add('active');
+                        document.querySelector('.contact').classList.remove('active');
+                        document.querySelector('.meet-team').classList.remove('active');
+                        // document.querySelector('.contact').style.display='none';
+
+
+                    }, 10);
+
+                console.log('ride');
+                break;
+
+                case "tour":
+                    console.log('tour');
+                    break;
+                    case "team":
+
+                        document.querySelector('.classes').classList.remove('active');
+                        document.querySelector('.contact').classList.remove('active');
+                        document.querySelector('.meet-team').classList.add('active');
+                        console.log('team');
+
+                        break;
+                        case "horses":
+                            console.log('horses');
+
+                            break;
+
+                            case "services":
+                                console.log('services');
+
+                                break;
+
+                                case "cont":
+
+                                    // document.querySelector('.classes').classList.add('hide');
+                                    document.querySelector('.classes').classList.remove('active');
+                                    document.querySelector('.meet-team').classList.remove('active');
+                                    // document.querySelector('.classes').style.display='none';
+
+                                    document.querySelector('.contact').classList.add('active');
+
+                                    break;
+
+
+                    default:
+                        console.log(a);
+
+
+            }
+
+
+        }
+    </script>
+</body>
+</html>
